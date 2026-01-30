@@ -25,15 +25,21 @@ The result should be an<mark> end-to-end working flow from UI to REST endpoints<
   - [GitHub - AlbertProfe/ApartmentPredictor](https://github.com/AlbertProfe/ApartmentPredictor)
   - [Create JAR from backend Spring Boot](https://github.com/AlbertProfe/ApartmentPredictor-React/blob/master/docs/appends/DATA-create-JAR.md)
 
+- CodeSandbox:
+  
+  - [Traffic Lights](https://codesandbox.io/p/sandbox/7f8ffd)
+  - [Scientists Gallery 5](https://codesandbox.io/p/devbox/scientistsgallery4-forked-94z8k7)
+
 - React:
   
-  - https://react.dev/learn/describing-the-ui
+  - [Describing the UI](https://react.dev/learn/describing-the-ui) / [Adding Interactivity](https://react.dev/learn/adding-interactivity)
+  - [Custom Hooks](https://albertprofe.dev/reactjs/reactjs-hook-custom.html) / [useEffect](https://albertprofe.dev/reactjs/reactjs-hook-effect.html) / [useState](https://albertprofe.dev/reactjs/reactjs-hook-state.html)
 
-- [Lab#RE07-1: traffic lights simulation – albertprofe wiki](https://albertprofe.dev/reactjs/rjslab7-1.html)
-
-- [Lab#RE01-1: API Rest Axios – albertprofe wiki](https://albertprofe.dev/reactjs/rjslab1.html)
-
-- [Lab#RE06-1: healthyFood Restaurant – albertprofe wiki](https://albertprofe.dev/reactjs/rjslab6-1.html)
+- Labs:
+  
+  - [Lab#RE07-1: traffic lights simulation – albertprofe wiki](https://albertprofe.dev/reactjs/rjslab7-1.html)
+  - [Lab#RE01-1: API Rest Axios – albertprofe wiki](https://albertprofe.dev/reactjs/rjslab1.html)
+  - [Lab#RE06-1: healthyFood Restaurant – albertprofe wiki](https://albertprofe.dev/reactjs/rjslab6-1.html)
 
 ## Project Structure
 
