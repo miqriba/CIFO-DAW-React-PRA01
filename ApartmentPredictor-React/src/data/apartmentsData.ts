@@ -5,7 +5,7 @@ export interface Apartment {
   rooms: number;
   bedrooms: number;
   bathrooms: number;
-  story: number;
+  floor: number;
   surface: number;
   location: string;
   areaCode: number; // Number judging how desirable the location is (1-10)
@@ -21,7 +21,7 @@ export interface Apartment {
   terrace?: boolean;
 }
 
-export const apartments: Apartment[] = [
+export const apartmentsData: Apartment[] = [
   {
     id: "apt-001",
     title: "Bright flat in Eixample",
@@ -29,7 +29,7 @@ export const apartments: Apartment[] = [
     rooms: 3,
     bedrooms: 2,
     bathrooms: 1,
-    story: 3,
+    floor: 3,
     surface: 85,
     location: "Barcelona, Eixample Dreta",
     areaCode: 9,
@@ -52,7 +52,7 @@ export const apartments: Apartment[] = [
     rooms: 2,
     bedrooms: 1,
     bathrooms: 1,
-    story: 2,
+    floor: 2,
     surface: 65,
     location: "Barcelona, Gràcia",
     areaCode: 8,
@@ -75,7 +75,7 @@ export const apartments: Apartment[] = [
     rooms: 4,
     bedrooms: 3,
     bathrooms: 2,
-    story: 1,
+    floor: 1,
     surface: 150,
     location: "Barcelona, Sarrià-Sant Gervasi",
     areaCode: 10,
@@ -98,7 +98,7 @@ export const apartments: Apartment[] = [
     rooms: 2,
     bedrooms: 1,
     bathrooms: 2,
-    story: 1,
+    floor: 1,
     surface: 95,
     location: "Barcelona, Sants-Montjuïc",
     areaCode: 7,
@@ -121,7 +121,7 @@ export const apartments: Apartment[] = [
     rooms: 3,
     bedrooms: 2,
     bathrooms: 1,
-    story: 4,
+    floor: 4,
     surface: 80,
     location: "Barcelona, Ciutat Vella",
     areaCode: 8,
@@ -144,7 +144,7 @@ export const apartments: Apartment[] = [
     rooms: 4,
     bedrooms: 3,
     bathrooms: 2,
-    story: 5,
+    floor: 5,
     surface: 120,
     location: "Barcelona, Les Corts",
     areaCode: 8,
@@ -167,7 +167,7 @@ export const apartments: Apartment[] = [
     rooms: 1,
     bedrooms: 1,
     bathrooms: 1,
-    story: 2,
+    floor: 2,
     surface: 45,
     location: "Barcelona, Horta-Guinardó",
     areaCode: 6,
@@ -190,7 +190,7 @@ export const apartments: Apartment[] = [
     rooms: 4,
     bedrooms: 3,
     bathrooms: 3,
-    story: 7,
+    floor: 7,
     surface: 180,
     location: "Barcelona, Eixample Esquerra",
     areaCode: 10,
@@ -213,7 +213,7 @@ export const apartments: Apartment[] = [
     rooms: 3,
     bedrooms: 2,
     bathrooms: 1,
-    story: 3,
+    floor: 3,
     surface: 90,
     location: "Barcelona, Sant Andreu",
     areaCode: 7,

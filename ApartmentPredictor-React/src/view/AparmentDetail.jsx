@@ -6,14 +6,13 @@ export default function ApartmentDetail({ apartment, setSelectedApartment }) {
           marginBottom: "5px",
           padding: "5px 10px",
           cursor: "pointer",
-          position: "relative",
-          left: "0",
         }}
         onClick={() => setSelectedApartment("")}
       >
         Back to list
       </button>
       <img
+        style={{ width: "100%", maxHeight: "400px", objectFit: "cover" }}
         className="image-detail"
         src={apartment.imageUrl}
         alt={apartment.title}
@@ -33,7 +32,8 @@ export default function ApartmentDetail({ apartment, setSelectedApartment }) {
         <ul>
           <li>Bedrooms: {apartment.bedrooms}</li>
           <li>Bathrooms: {apartment.bathrooms}</li>
-          {apartment.elevator ? <li>Elevator</li> : null}
+          <li>Floor: {apartment.floor}</li>
+          {apartment.elevator ? <li>Elevator</li> : <li>No elevator</li>}
           {apartment.AC ? <li>Air Conditioning</li> : null}
           {apartment.furnished ? <li>Furnished</li> : null}
           {apartment.balcony ? <li>With balcony</li> : null}
