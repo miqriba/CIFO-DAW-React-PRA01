@@ -1,6 +1,6 @@
 export default function Form({ type, apartment }) {
   return (
-    <div className="apartment-item">
+    <div className="card non-clickable">
       <div className="apartment-header">
         {type === "create" ? "Create new apartment" : "Edit apartment"}
       </div>

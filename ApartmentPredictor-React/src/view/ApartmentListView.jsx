@@ -1,20 +1,23 @@
-import { useState } from "react";
 import Form from "./Form";
 
-const ApartmentListView = ({
+export default function ApartmentListView({
   apartments,
+  setApartments,
   setSelectedApartment,
   editorMode,
   setEditorMode,
-}) => {
+}) {
   return (
     <>
       <h1>Apartments</h1>
-      <button onClick={() => setEditorMode(!editorMode)}>
+      <button
+        className="editor-button"
+        onClick={() => setEditorMode(!editorMode)}
+      >
         Editor mode: {editorMode ? "ON" : "OFF"}
       </button>
       <ul className="apartment-list">
-        {editorMode && <li className="apartment-item"> + Add new apartment</li>}
+        {editorMode && <li className="card"> + Create new apartment</li>}
         {editorMode && <Form type="create" apartment={apartments[0]} />}
 
         {apartments.map((apartment) => (
@@ -23,44 +26,64 @@ const ApartmentListView = ({
             style={{
               display: "flex",
               flexDirection: "row",
+              padding: "0",
               margin: "0",
               justifyContent: "space-between",
               alignItems: "center",
               marginBottom: "20px",
             }}
             key={apartment.id}
-            className="apartment-item"
+            className="card"
           >
-            <div style={{ display: "flex", flexDirection: "column" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                padding: "1rem",
+              }}
+            >
               <div className="apartment-header">{apartment.title}</div>
               <p>
                 <strong>${apartment.price}</strong> €/mes{" "}
                 {apartment.garage ? "With garage" : null}
               </p>
-              <p>
+              <p style={{ margin: "0" }}>
                 {apartment.bedrooms} hab. {apartment.surface} m² Floor{" "}
                 {apartment.floor} {apartment.elevator ? "with elevator" : null}
               </p>
+              {/* Editor mode buttons */}
               <div>
                 {editorMode ? <button className="edit">Edit</button> : null}
-                {editorMode ? <button className="delete">Delete</button> : null}
+                {editorMode ? (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setApartments(
+                        apartments.filter((a) => a.id !== apartment.id),
+                      );
+                    }}
+                    className="delete"
+                  >
+                    Delete
+                  </button>
+                ) : null}
               </div>
 
               {/* <div className="apartment-meta"></div> */}
             </div>
-
-            <img
-              className="image-preview"
-              style={{ width: "150px", height: "100%", objectFit: "cover" }}
-              src={apartment.imageUrl}
-              alt="image"
-            />
+            <div className="image-frame">
+              <img
+                className="image-preview"
+                src={apartment.imageUrl}
+                alt="image"
+              />
+            </div>
           </li>
         ))}
       </ul>
     </>
   );
-};
+}
 
 // Albert's REST API version
 
@@ -129,5 +152,3 @@ const ApartmentListView = ({
 //     </>
 //   );
 // };
-
-export default ApartmentListView;

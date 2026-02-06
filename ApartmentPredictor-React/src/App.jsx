@@ -17,6 +17,7 @@ export default function App() {
       {!selectedApartment ? (
         <ApartmentListView
           apartments={apartments}
+          setApartments={setApartments}
           setSelectedApartment={setSelectedApartment}
           editorMode={editorMode}
           setEditorMode={setEditorMode}
