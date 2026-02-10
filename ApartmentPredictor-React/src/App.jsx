@@ -11,6 +11,9 @@ export default function App() {
   const [apartments, setApartments] = useState(apartmentsData);
   const [selectedApartment, setSelectedApartment] = useState(""); // string apartment id
   const [editorMode, setEditorMode] = useState(false);
+  const [editingApartment, setEditingApartment] = useState(""); // string apartment id
+  // currentId is the id that will be assigned to the next created apartment, it starts in 10 because our initial data has apartments with ids from 1 to 9
+  const [currentId, setCurrentId] = useState(10);
 
   return (
     <div className="App">
@@ -21,6 +24,10 @@ export default function App() {
           setSelectedApartment={setSelectedApartment}
           editorMode={editorMode}
           setEditorMode={setEditorMode}
+          editingApartment={editingApartment}
+          setEditingApartment={setEditingApartment}
+          currentId={currentId}
+          setCurrentId={setCurrentId}
         />
       ) : null}
       {selectedApartment ? (

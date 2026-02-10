@@ -92,6 +92,16 @@ input {
   margin-bottom: 0.5rem;
 }
 
+.apartment-element {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+  justify-content: space-between;
+  /* align-items: center; */
+  margin-bottom: 20px;
+}
+
 .apartment-detail {
   max-width: 600px;
   margin: 0 auto;
@@ -106,7 +116,7 @@ input {
 
 /* TODO Prevent Create new apartment card from bing clickable */
 .non-clickable:hover {
-  cursor: default;
+  cursor: default !important;
 }
 
 .card {

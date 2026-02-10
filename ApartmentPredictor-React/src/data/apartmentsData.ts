@@ -1,5 +1,5 @@
 export interface Apartment {
-  id: string;
+  id: number;
   title: string;
   price: number;
   rooms: number;
@@ -23,7 +23,7 @@ export interface Apartment {
 
 export const apartmentsData: Apartment[] = [
   {
-    id: "apt-001",
+    id: 1,
     title: "Bright flat in Eixample",
     price: 1250,
     rooms: 3,
@@ -46,7 +46,7 @@ export const apartmentsData: Apartment[] = [
     terrace: false,
   },
   {
-    id: "apt-002",
+    id: 2,
     title: "Modern apartment in Gràcia",
     price: 1100,
     rooms: 2,
@@ -69,7 +69,7 @@ export const apartmentsData: Apartment[] = [
     terrace: false,
   },
   {
-    id: "apt-003",
+    id: 3,
     title: "Spacious villa in Sarrià",
     price: 2200,
     rooms: 4,
@@ -92,7 +92,7 @@ export const apartmentsData: Apartment[] = [
     terrace: true,
   },
   {
-    id: "apt-004",
+    id: 4,
     title: "Contemporary loft in Sants",
     price: 1400,
     rooms: 2,
@@ -115,7 +115,7 @@ export const apartmentsData: Apartment[] = [
     terrace: false,
   },
   {
-    id: "apt-005",
+    id: 5,
     title: "Historic flat in Ciutat Vella",
     price: 1350,
     rooms: 3,
@@ -138,7 +138,7 @@ export const apartmentsData: Apartment[] = [
     terrace: false,
   },
   {
-    id: "apt-006",
+    id: 6,
     title: "Family home in Les Corts",
     price: 1600,
     rooms: 4,
@@ -161,7 +161,7 @@ export const apartmentsData: Apartment[] = [
     terrace: true,
   },
   {
-    id: "apt-007",
+    id: 7,
     title: "Affordable studio in Horta-Guinardó",
     price: 850,
     rooms: 1,
@@ -184,7 +184,7 @@ export const apartmentsData: Apartment[] = [
     terrace: false,
   },
   {
-    id: "apt-008",
+    id: 8,
     title: "Penthouse in Eixample",
     price: 2800,
     rooms: 4,
@@ -207,7 +207,7 @@ export const apartmentsData: Apartment[] = [
     terrace: true,
   },
   {
-    id: "apt-009",
+    id: 9,
     title: "Elegant apartment in Sant Andreu",
     price: 1150,
     rooms: 3,

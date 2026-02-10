@@ -1,4 +1,5 @@
-import Form from "./Form";
+import CreateNewApartment from "./CreateNewApartment";
+import EditApartment from "./EditApartment";
 
 export default function ApartmentListView({
   apartments,
@@ -6,10 +7,14 @@ export default function ApartmentListView({
   setSelectedApartment,
   editorMode,
   setEditorMode,
+  editingApartment,
+  setEditingApartment,
+  currentId,
+  setCurrentId,
 }) {
   return (
     <>
-      <h1>Apartments</h1>
+      <h1>Apartment Predictor</h1>
       <button
         className="editor-button"
         onClick={() => setEditorMode(!editorMode)}
@@ -17,23 +22,24 @@ export default function ApartmentListView({
         Editor mode: {editorMode ? "ON" : "OFF"}
       </button>
       <ul className="apartment-list">
-        {editorMode && <li className="card"> + Create new apartment</li>}
-        {editorMode && <Form type="create" apartment={apartments[0]} />}
-
+        {editorMode && (
+          <CreateNewApartment
+            apartments={apartments}
+            setApartments={setApartments}
+            currentId={currentId}
+            setCurrentId={setCurrentId}
+          />
+        )}
         {apartments.map((apartment) => (
           <li
-            onClick={() => setSelectedApartment(apartment.id)}
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              padding: "0",
-              margin: "0",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginBottom: "20px",
+            onClick={() => {
+              if (editingApartment !== apartment.id) {
+                setSelectedApartment(apartment.id);
+              }
             }}
             key={apartment.id}
-            className="card"
+            className={`apartment-element card ${editingApartment === apartment.id ? "non-clickable" : ""}`}
+            style={{ padding: 0 }}
           >
             <div
               style={{
@@ -51,10 +57,29 @@ export default function ApartmentListView({
                 {apartment.bedrooms} hab. {apartment.surface} m² Floor{" "}
                 {apartment.floor} {apartment.elevator ? "with elevator" : null}
               </p>
+              {/* Editor Form */}
+              {editingApartment === apartment.id ? (
+                <EditApartment
+                  apartment={apartment}
+                  apartments={apartments}
+                  setApartments={setApartments}
+                  setEditingApartment={setEditingApartment}
+                />
+              ) : null}
               {/* Editor mode buttons */}
               <div>
-                {editorMode ? <button className="edit">Edit</button> : null}
-                {editorMode ? (
+                {editorMode && editingApartment !== apartment.id ? (
+                  <button
+                    className="edit"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setEditingApartment(apartment.id);
+                    }}
+                  >
+                    Edit
+                  </button>
+                ) : null}
+                {editorMode && editingApartment !== apartment.id ? (
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
@@ -68,12 +93,11 @@ export default function ApartmentListView({
                   </button>
                 ) : null}
               </div>
-
-              {/* <div className="apartment-meta"></div> */}
             </div>
             <div className="image-frame">
               <img
                 className="image-preview"
+                style={{ alignSelf: "start" }}
                 src={apartment.imageUrl}
                 alt="image"
               />

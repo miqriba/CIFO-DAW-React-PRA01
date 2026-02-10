@@ -1,6 +1,13 @@
-export default function Form({ type, apartment }) {
+export default function Form({
+  type,
+  apartment,
+  setCreatingApartment,
+  setEditingApartment,
+}) {
+  // const [temporalApartment, setTemporalApartment] = useState(apartment || {});
+
   return (
-    <div className="card non-clickable">
+    <div>
       <div className="apartment-header">
         {type === "create" ? "Create new apartment" : "Edit apartment"}
       </div>
@@ -50,6 +57,15 @@ export default function Form({ type, apartment }) {
           />
         </label>
         <br />
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setCreatingApartment(false);
+            setEditingApartment(false);
+          }}
+        >
+          Cancel
+        </button>
         <input type="submit" value={type === "create" ? "Create" : "Update"} />
       </form>
     </div>
