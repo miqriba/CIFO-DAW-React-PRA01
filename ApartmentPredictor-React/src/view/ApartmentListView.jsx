@@ -86,18 +86,7 @@ export default function ApartmentListView({
                     setApartments={setApartments}
                     apartment={apartment}
                   />
-                ) : // <button
-                //   onClick={(e) => {
-                //     e.stopPropagation();
-                //     setApartments(
-                //       apartments.filter((a) => a.id !== apartment.id),
-                //     );
-                //   }}
-                //   className="delete"
-                // >
-                //   Delete
-                // </button>
-                null}
+                ) : null}
               </div>
             </div>
             <div className="image-frame">
