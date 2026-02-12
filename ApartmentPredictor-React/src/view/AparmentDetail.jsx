@@ -1,3 +1,5 @@
+import Reviews from "./Reviews";
+
 export default function ApartmentDetail({ apartment, setSelectedApartment }) {
   return (
     <div>
@@ -40,6 +42,7 @@ export default function ApartmentDetail({ apartment, setSelectedApartment }) {
           {apartment.terrace ? <li>With terrace</li> : null}
           {apartment.garage ? <li>With garage</li> : null}
         </ul>
+        <Reviews reviews={apartment.reviews} />
       </div>
     </div>
   );

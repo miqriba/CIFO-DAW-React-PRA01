@@ -51,7 +51,7 @@ export default function CreateNewApartment({
                   }
                 />
               </label>
-              <br />
+
               <label>
                 Price
                 <input
@@ -65,7 +65,7 @@ export default function CreateNewApartment({
                   }
                 />
               </label>
-              <br />
+
               <label>
                 Rooms
                 <input
@@ -79,7 +79,7 @@ export default function CreateNewApartment({
                   }
                 />
               </label>
-              <br />
+
               <label>
                 Surface
                 <input
@@ -93,7 +93,7 @@ export default function CreateNewApartment({
                   }
                 />
               </label>
-              <br />
+
               <label style={{ marginBottom: "1rem" }}>
                 Floor
                 <input
@@ -107,19 +107,20 @@ export default function CreateNewApartment({
                   }
                 />
               </label>
-              <br />
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  setApartmentDraft({});
-                  setCreatingApartment(false);
-                }}
-              >
-                Cancel
-              </button>
-              <button type="submit" value="Create">
-                Create
-              </button>
+              <div style={{ display: "flex", flexDirection: "row" }}>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setApartmentDraft({});
+                    setCreatingApartment(false);
+                  }}
+                >
+                  Cancel
+                </button>
+                <button type="submit" value="Create">
+                  Create
+                </button>
+              </div>
             </form>
           </div>
           {/* <Form type="create" setCreatingApartment={setCreatingApartment} /> */}

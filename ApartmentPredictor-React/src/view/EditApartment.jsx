@@ -37,7 +37,7 @@ export default function EditApartment({
             }
           />
         </label>
-        <br />
+
         <label>
           Price
           <input
@@ -49,7 +49,7 @@ export default function EditApartment({
             }
           />
         </label>
-        <br />
+
         <label>
           Rooms
           <input
@@ -61,7 +61,7 @@ export default function EditApartment({
             }
           />
         </label>
-        <br />
+
         <label>
           Surface
           <input
@@ -73,7 +73,7 @@ export default function EditApartment({
             }
           />
         </label>
-        <br />
+
         <label style={{ marginBottom: "1rem" }}>
           Floor
           <input
@@ -85,19 +85,20 @@ export default function EditApartment({
             }
           />
         </label>
-        <br />
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            setEditingApartment(false);
-          }}
-        >
-          Cancel
-        </button>
-        <button type="submit" value="Update">
-          Update
-        </button>
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setEditingApartment(false);
+            }}
+          >
+            Cancel
+          </button>
+          <button className="edit" type="submit" value="Update">
+            Update
+          </button>
+        </div>
       </form>
     </div>
   );

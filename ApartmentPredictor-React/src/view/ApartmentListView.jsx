@@ -1,4 +1,5 @@
 import CreateNewApartment from "./CreateNewApartment";
+import DeleteHub from "./DeleteHub";
 import EditApartment from "./EditApartment";
 
 export default function ApartmentListView({
@@ -80,18 +81,23 @@ export default function ApartmentListView({
                   </button>
                 ) : null}
                 {editorMode && editingApartment !== apartment.id ? (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setApartments(
-                        apartments.filter((a) => a.id !== apartment.id),
-                      );
-                    }}
-                    className="delete"
-                  >
-                    Delete
-                  </button>
-                ) : null}
+                  <DeleteHub
+                    apartments={apartments}
+                    setApartments={setApartments}
+                    apartment={apartment}
+                  />
+                ) : // <button
+                //   onClick={(e) => {
+                //     e.stopPropagation();
+                //     setApartments(
+                //       apartments.filter((a) => a.id !== apartment.id),
+                //     );
+                //   }}
+                //   className="delete"
+                // >
+                //   Delete
+                // </button>
+                null}
               </div>
             </div>
             <div className="image-frame">

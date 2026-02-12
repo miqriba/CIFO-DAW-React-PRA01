@@ -11,6 +11,7 @@ export interface Apartment {
   areaCode: number; // Number judging how desirable the location is (1-10)
   description: string;
   createdAt: string;
+  reviews: { id: number; rating: number; title: string; comment: string }[];
   imageUrl?: string;
   interested?: boolean;
   AC?: boolean;
@@ -44,6 +45,32 @@ export const apartmentsData: Apartment[] = [
     balcony: true,
     garage: false,
     terrace: false,
+    reviews: [
+      {
+        id: 1,
+        rating: 5,
+        title: "Excellent location",
+        comment: "Eixample Dreta is unbeatable. Bright flat and very quiet.",
+      },
+      {
+        id: 2,
+        rating: 4,
+        title: "Very comfortable",
+        comment: "Good layout and furniture, balcony is great.",
+      },
+      {
+        id: 3,
+        rating: 4,
+        title: "Solid choice",
+        comment: "Elevator and renovation make daily life easy.",
+      },
+      {
+        id: 4,
+        rating: 5,
+        title: "Would rent again",
+        comment: "Ideal size for a couple, lots of natural light.",
+      },
+    ],
   },
   {
     id: 2,
@@ -67,6 +94,26 @@ export const apartmentsData: Apartment[] = [
     balcony: false,
     garage: false,
     terrace: false,
+    reviews: [
+      {
+        id: 1,
+        rating: 4,
+        title: "Great neighborhood",
+        comment: "Gràcia atmosphere is amazing.",
+      },
+      {
+        id: 2,
+        rating: 3,
+        title: "No elevator",
+        comment: "Comfortable flat but stairs can be annoying.",
+      },
+      {
+        id: 3,
+        rating: 4,
+        title: "Cozy space",
+        comment: "Small but well used and nicely furnished.",
+      },
+    ],
   },
   {
     id: 3,
@@ -90,6 +137,32 @@ export const apartmentsData: Apartment[] = [
     balcony: true,
     garage: true,
     terrace: true,
+    reviews: [
+      {
+        id: 1,
+        rating: 5,
+        title: "Perfect family home",
+        comment: "Lots of space and very quiet area.",
+      },
+      {
+        id: 2,
+        rating: 5,
+        title: "Top location",
+        comment: "Sarrià offers great quality of life.",
+      },
+      {
+        id: 3,
+        rating: 4,
+        title: "Premium price",
+        comment: "Expensive but justified by space and extras.",
+      },
+      {
+        id: 4,
+        rating: 5,
+        title: "Very comfortable",
+        comment: "Garage and terrace are huge advantages.",
+      },
+    ],
   },
   {
     id: 4,
@@ -113,6 +186,26 @@ export const apartmentsData: Apartment[] = [
     balcony: false,
     garage: false,
     terrace: false,
+    reviews: [
+      {
+        id: 1,
+        rating: 4,
+        title: "Unique layout",
+        comment: "Loft style feels open and modern.",
+      },
+      {
+        id: 2,
+        rating: 4,
+        title: "Very practical",
+        comment: "Two bathrooms are surprisingly useful.",
+      },
+      {
+        id: 3,
+        rating: 3,
+        title: "Street noise",
+        comment: "Ground floor can be a bit noisy.",
+      },
+    ],
   },
   {
     id: 5,
@@ -136,6 +229,32 @@ export const apartmentsData: Apartment[] = [
     balcony: true,
     garage: false,
     terrace: false,
+    reviews: [
+      {
+        id: 1,
+        rating: 5,
+        title: "Lots of charm",
+        comment: "Beautiful historic details.",
+      },
+      {
+        id: 2,
+        rating: 3,
+        title: "Many stairs",
+        comment: "Fourth floor without elevator is tough.",
+      },
+      {
+        id: 3,
+        rating: 4,
+        title: "Central location",
+        comment: "Perfect if you love city life.",
+      },
+      {
+        id: 4,
+        rating: 4,
+        title: "Nice balcony",
+        comment: "Great spot to enjoy the old town.",
+      },
+    ],
   },
   {
     id: 6,
@@ -159,6 +278,26 @@ export const apartmentsData: Apartment[] = [
     balcony: true,
     garage: true,
     terrace: true,
+    reviews: [
+      {
+        id: 1,
+        rating: 5,
+        title: "Perfect for families",
+        comment: "Large and very practical layout.",
+      },
+      {
+        id: 2,
+        rating: 4,
+        title: "Great extras",
+        comment: "Garage and terrace add a lot of value.",
+      },
+      {
+        id: 3,
+        rating: 4,
+        title: "Quiet area",
+        comment: "Residential and well connected.",
+      },
+    ],
   },
   {
     id: 7,
@@ -182,6 +321,26 @@ export const apartmentsData: Apartment[] = [
     balcony: false,
     garage: false,
     terrace: false,
+    reviews: [
+      {
+        id: 1,
+        rating: 4,
+        title: "Good price",
+        comment: "Affordable compared to most areas.",
+      },
+      {
+        id: 2,
+        rating: 4,
+        title: "Functional",
+        comment: "Everything you need in a small space.",
+      },
+      {
+        id: 3,
+        rating: 3,
+        title: "Basic",
+        comment: "Nothing fancy, but correct.",
+      },
+    ],
   },
   {
     id: 8,
@@ -205,6 +364,32 @@ export const apartmentsData: Apartment[] = [
     balcony: true,
     garage: true,
     terrace: true,
+    reviews: [
+      {
+        id: 1,
+        rating: 5,
+        title: "Luxury",
+        comment: "Top finishes and incredible terrace.",
+      },
+      {
+        id: 2,
+        rating: 5,
+        title: "Amazing views",
+        comment: "Bright and spacious penthouse.",
+      },
+      {
+        id: 3,
+        rating: 4,
+        title: "High price",
+        comment: "Expensive, but it’s premium.",
+      },
+      {
+        id: 4,
+        rating: 5,
+        title: "Exceptional",
+        comment: "One of the best places in Eixample.",
+      },
+    ],
   },
   {
     id: 9,
@@ -228,5 +413,25 @@ export const apartmentsData: Apartment[] = [
     balcony: true,
     garage: false,
     terrace: false,
+    reviews: [
+      {
+        id: 1,
+        rating: 4,
+        title: "Well renovated",
+        comment: "Feels modern and clean.",
+      },
+      {
+        id: 2,
+        rating: 4,
+        title: "Good area",
+        comment: "Sant Andreu is improving a lot.",
+      },
+      {
+        id: 3,
+        rating: 3,
+        title: "Fair price",
+        comment: "Correct value for what it offers.",
+      },
+    ],
   },
 ];
